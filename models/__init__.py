@@ -1,0 +1,2 @@
+from .exact_gp_model import ExactGPModel
+from .stochastic_variational_gpr_model import StochasticVariationalGPModel
