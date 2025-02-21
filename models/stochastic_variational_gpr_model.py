@@ -4,7 +4,7 @@ from gpytorch.variational import CholeskyVariationalDistribution
 from gpytorch.variational import VariationalStrategy
 
 class StochasticVariationalGPModel(gpytorch.models.ApproximateGP):
-    def __init__(self,inducing_points):
+    def __init__(self, inducing_points, likelihood):
 
         # Initialize Variational distribution and strategy
         variational_distribution = CholeskyVariationalDistribution(inducing_points.size(0))
@@ -20,6 +20,7 @@ class StochasticVariationalGPModel(gpytorch.models.ApproximateGP):
         self.covar_module = gpytorch.kernels.ScaleKernel(
             gpytorch.kernels.RBFKernel()
         )
+        self.likelihood = likelihood
 
     def forward(self, x):
         mean_x = self.mean_module(x)
