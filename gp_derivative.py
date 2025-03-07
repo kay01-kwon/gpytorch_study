@@ -110,8 +110,8 @@ def main():
                   'Mean',
                   'Confidence'], loc='best')
     y2_ax.set_title('Derivatives')
-    # plt.show()
-    plt.savefig('gp_derivative.png', dpi=600)
+    plt.show()
+    # plt.savefig('gp_derivative.png', dpi=600)
 
 if __name__ == '__main__':
     main()
